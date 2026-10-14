@@ -25,11 +25,15 @@ displayFavouriteLanguage();
 // 4 Calculates a unique value using your Student ID: U309 4683
 
 const uniqueValueByStudentId = () => {
-    // Split into an array
+    // Retrieve the last four digits
     let lastFourDigits = studentID.slice(-4)
-    console.log(lastFourDigits)
-    // Declare the sum variable
+    // Error check on wrong student ID
+    if (lastFourDigits.length !== 4) {
+        console.log('Please enter a Student ID containing at least 4 digits.');
+        return;
+    }
     let sum = 0;
+
     // Loop the array and sum
     for (let index = 0; index < lastFourDigits.length; index++) {
         sum += parseInt(lastFourDigits[index], 10);
