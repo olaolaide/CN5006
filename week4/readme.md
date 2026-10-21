@@ -20,14 +20,12 @@ Retrieve all documents and filter records using specific conditions.
 Display only people who live in London.
 Sort query results by salary.
 Count, update, and delete documents.
-Demonstrate successful database operations using terminal output and MongoDB Compass or MongoDB Atlas screenshots.
-2. Technologies Used
+Demonstrate successful database operations using terminal output and MongoDB Compass or MongoDB Atlas screenshots. 2. Technologies Used
 Node.js: Executes the JavaScript application.
 MongoDB: Stores the person records.
 Mongoose: Defines schemas and interacts with MongoDB.
 dotenv: Loads environment variables from a .env file.
-MongoDB Compass / MongoDB Atlas: Allows database records to be inspected visually.
-3. Project Structure
+MongoDB Compass / MongoDB Atlas: Allows database records to be inspected visually. 3. Project Structure
 mongodb-city-query/
 ├── index.js
 ├── .env
@@ -39,8 +37,7 @@ index.js contains the Mongoose schema and database operations.
 .env stores the MongoDB connection string.
 .gitignore prevents sensitive configuration and dependencies from being committed.
 package.json defines the project dependencies and scripts.
-README.md documents the project and its implementation.
-4. Installation and Setup
+README.md documents the project and its implementation. 4. Installation and Setup
 Prerequisites
 
 Install Node.js and ensure that you have access to a MongoDB database, either locally or through MongoDB Atlas.
