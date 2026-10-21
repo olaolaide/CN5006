@@ -2,7 +2,9 @@ const mongoose = require("mongoose");
 const dotenv = require("dotenv");
 dotenv.config();
 
-const MONGO_URI = process.env.MONGO_URI;
+const MONGO_URI =
+  process.env.MONGO_URI ??
+  "mongodb+srv://Abimbola2003:Abimbola2003@kalixy.u0jcskt.mongodb.net/";
 
 const PersonSchema = new mongoose.Schema({
   name: {
@@ -13,7 +15,7 @@ const PersonSchema = new mongoose.Schema({
   gender: String,
   salary: Number,
   // Added City
-  city: String
+  city: String,
 });
 
 const Person = mongoose.model("modelname", PersonSchema, "personCollection");
@@ -105,19 +107,61 @@ async function updateManyPersons() {
 // Insert many records with City
 async function insertManyWithCity() {
   const peopleWithCity = [
-  { name: "JohnMKL", age: 35, gender: "Male", salary: 4200, city: "London" },
-  { name: "SarahNQ", age: 29, gender: "Female", salary: 3800, city: "London" },
-  { name: "DavidPR", age: 45, gender: "Male", salary: 5600, city: "London" },
-  { name: "EmmaWX", age: 32, gender: "Female", salary: 4900, city: "London" },
-  { name: "OliverTY", age: 41, gender: "Male", salary: 6100, city: "Manchester" },
-  { name: "SophiaKL", age: 26, gender: "Female", salary: 3200, city: "Manchester" },
-  { name: "JamesVD", age: 38, gender: "Male", salary: 4500, city: "Birmingham" },
-  { name: "AvaBC", age: 31, gender: "Female", salary: 5200, city: "Liverpool" },
-  { name: "NoahFG", age: 50, gender: "Male", salary: 7200, city: "Bristol" },
-  { name: "MiaRS", age: 24, gender: "Female", salary: 2900, city: "Leeds" },
-  { name: "LucasHJ", age: 36, gender: "Male", salary: 4800, city: "Birmingham" },
-  { name: "IslaZE", age: 43, gender: "Female", salary: 6500, city: "Liverpool" }
-];
+    { name: "JohnMKL", age: 35, gender: "Male", salary: 4200, city: "London" },
+    {
+      name: "SarahNQ",
+      age: 29,
+      gender: "Female",
+      salary: 3800,
+      city: "London",
+    },
+    { name: "DavidPR", age: 45, gender: "Male", salary: 5600, city: "London" },
+    { name: "EmmaWX", age: 32, gender: "Female", salary: 4900, city: "London" },
+    {
+      name: "OliverTY",
+      age: 41,
+      gender: "Male",
+      salary: 6100,
+      city: "Manchester",
+    },
+    {
+      name: "SophiaKL",
+      age: 26,
+      gender: "Female",
+      salary: 3200,
+      city: "Manchester",
+    },
+    {
+      name: "JamesVD",
+      age: 38,
+      gender: "Male",
+      salary: 4500,
+      city: "Birmingham",
+    },
+    {
+      name: "AvaBC",
+      age: 31,
+      gender: "Female",
+      salary: 5200,
+      city: "Liverpool",
+    },
+    { name: "NoahFG", age: 50, gender: "Male", salary: 7200, city: "Bristol" },
+    { name: "MiaRS", age: 24, gender: "Female", salary: 2900, city: "Leeds" },
+    {
+      name: "LucasHJ",
+      age: 36,
+      gender: "Male",
+      salary: 4800,
+      city: "Birmingham",
+    },
+    {
+      name: "IslaZE",
+      age: 43,
+      gender: "Female",
+      salary: 6500,
+      city: "Liverpool",
+    },
+  ];
 
   const result = await Person.insertMany(peopleWithCity);
 
@@ -127,7 +171,7 @@ async function insertManyWithCity() {
 
 // Function that displays only the people from a specific city (London).
 async function findPeopleFromLondon() {
-const docs = await Person.find({ city: "London"})
+  const docs = await Person.find({ city: "London" })
     .sort({ salary: 1 }) // sort by salary ascending
     .select("name age city")
     .limit(100);
@@ -143,7 +187,6 @@ async function main() {
   try {
     await mongoose.connect(MONGO_URI);
     console.log(`Connected to MongoDB`);
-
     await insertOne();
     await insertMany();
     await findAll();
