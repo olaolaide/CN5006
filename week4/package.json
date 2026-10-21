@@ -1,0 +1,20 @@
+{
+  "name": "week4",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "node index.js"
+  },
+  "keywords": [],
+  "author": "Abimbola Olaide",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "mongodb": "^7.7.0",
+    "mongoose": "^9.11.2"
+  },
+  "dependencies": {
+    "dotenv": "^18.0.8"
+  }
+}
