@@ -38,8 +38,8 @@ const uniqueValueByStudentId = () => {
     for (let index = 0; index < lastFourDigits.length; index++) {
         sum += parseInt(lastFourDigits[index], 10);
     }
-    console.log('\nLast four digits: ' + lastFourDigits);
-    console.log('Sum of the last four digits: ' + sum);
+
+    console.log('Verification Number: ' + sum);
 }
 
 uniqueValueByStudentId();
