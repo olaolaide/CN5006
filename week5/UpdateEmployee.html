@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Update Employee</title>
+
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background: beige;
+        margin: 40px;
+      }
+
+      form {
+        max-width: 450px;
+        padding: 25px;
+        background: white;
+        border-radius: 10px;
+      }
+
+      label {
+        display: block;
+        margin-top: 15px;
+        font-weight: bold;
+      }
+
+      select,
+      input {
+        width: 100%;
+        box-sizing: border-box;
+        padding: 10px;
+        margin-top: 6px;
+      }
+
+      button {
+        margin-top: 20px;
+        padding: 12px;
+        width: 100%;
+        background: #176b45;
+        color: white;
+        border: none;
+        cursor: pointer;
+        border-radius: 5px;
+      }
+
+      #result {
+        max-width: 450px;
+        white-space: pre-wrap;
+        overflow-wrap: anywhere;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>Update Employee Details</h2>
+    <form id="updateForm">
+      <h3>1. Find Employee</h3>
+      <label for="searchBy">Search employee by:</label>
+      <select id="searchBy" name="searchBy">
+        <option value="name">Name</option>
+        <option value="age">Age</option>
+        <option value="gender">Gender</option>
+      </select>
+
+      <label for="searchValue">Enter search value:</label>
+      <input
+        type="text"
+        id="searchValue"
+        name="searchValue"
+        placeholder="Enter employee name"
+        required
+      />
+
+      <h3>2. Update Employee</h3>
+
+      <label for="updateField">Select field to update:</label>
+      <select id="updateField" name="updateField">
+        <option value="name">Name</option>
+        <option value="age">Age</option>
+        <option value="gender">Gender</option>
+        <option value="salary">Salary</option>
+        <option value="city">City</option>
+      </select>
+
+      <label for="updateValue">Enter new value:</label>
+      <input
+        type="text"
+        id="updateValue"
+        name="updateValue"
+        placeholder="Enter new value"
+        required
+      />
+
+      <button type="submit">Update Employee</button>
+    </form>
+  </body>
+</html>
