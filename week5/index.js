@@ -1,18 +1,37 @@
 const express = require("express");
-
 const app = express();
 const fs = require("fs");
-// Built-in middleware for parsing form data and JSON
+const mongoose = require("mongoose");
+const {
+  insertOne,
+  findAll,
+  insertMany,
+  countDocuments,
+  findFemalesOver30,
+  deleteManyPersons,
+  updateManyPersons,
+} = require("./Week4lab");
+
+const MONGO_URI = "mongodb+srv://Abimbola2003:Abimbola2003@kalixy.u0jcskt.mongodb.net/";
+
+mongoose
+  .connect(MONGO_URI)
+  .then(() => console.log("Connected to MongoDB"))
+  .catch((err) => console.log(err));
+
+
+// Start server
+const PORT = 5000;
+
+
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+
 
 // Home route
 app.get("/", (req, res) => {
   res.send("Hello! This is my first Express application.");
 });
-
-// Start server
-const PORT = 5000;
 
 app.get("/about", function (req, res) {
   res.send("This is a basic Express application");
@@ -74,6 +93,7 @@ app.get("/GetStudent/:id", (req, res) => {
     }
   });
 });
+
 // showing html form
 app.get("/studentinfo", (req, res) => {
   res.sendFile("StudentInfo.html", { root: __dirname });
@@ -98,25 +118,8 @@ app.post("/submit-data", (req, res) => {
     },
   });
 });
+
 app.use(express.urlencoded({ extended: true }));
-const mongoose = require("mongoose");
-const {
-  insertOne,
-  findAll,
-  insertMany,
-  countDocuments,
-  findFemalesOver30,
-  deleteManyPersons,
-  updateManyPersons,
-} = require("./Week4lab");
-
-const MONGO_URI =
-  "mongodb+srv://Abimbola2003:Abimbola2003@kalixy.u0jcskt.mongodb.net/";
-
-mongoose
-  .connect(MONGO_URI)
-  .then(() => console.log("Connected to MongoDB"))
-  .catch((err) => console.log(err));
 
 app.post("/insertOne", async (req, res) => {
   try {
@@ -157,8 +160,10 @@ app.get("/persons", async (req, res) => {
   }
 });
 
+
 // PORTFOLIO PROJECT
 
+// Female over 30 
 app.get("/femaleOver30", async (req, res) => {
   try {
     console.log("Retrieving female over 30");
@@ -170,6 +175,7 @@ app.get("/femaleOver30", async (req, res) => {
   }
 });
 
+// Count
 app.get("/countPeople", async (req, res) => {
   try {
     console.log("Counting everyone in my database");
@@ -193,8 +199,8 @@ app.delete("/deleteMany", async (req, res) => {
   }
 });
 
-// Insert many form
-app.delete("/insertForm", async (req, res) => {
+// Insert many
+app.post("/insertMany", async (req, res) => {
   try {
     console.log("Inserting many people in my database");
     const result = await insertMany();
@@ -204,6 +210,19 @@ app.delete("/insertForm", async (req, res) => {
     res.status(500).json(err);
   }
 });
+
+// Insert many
+app.post("/updateMany", async (req, res) => {
+  try {
+    console.log("Inserting many people in my database");
+    const result = await updateManyPersons();
+    res.json(result);
+    console.log("result");
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
 
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
