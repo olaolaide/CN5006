@@ -44,33 +44,4 @@ Week3/
 ├── EmployeeInfo.js
 ├── package.json
 └── README.md
-The filenames above are an example of a recommended structure. The actual filenames should match the files in the project. The employee exercise and operating-system exercise can be saved in separate files to keep the code organised.
-
-File Descriptions
-File
-
-Purpose
-
-PortfolioTask.js
-
-Collects student details, displays the date and time, displays the favourite programming language, and calculates the student ID verification number.
-
-StudentInfo.js
-
-Stores student information and exports functions and variables for use in other files.
-
-Person.js
-
-Defines and exports a Person class with a constructor and an information method.
-
-EmployeeInfo.js
-
-Demonstrates functions, employee information, and the use of the os and util modules, if these exercises are kept together.
-
-package.json
-
-Records project metadata and dependencies.
-
-README.md
-
-Documents the project
+```

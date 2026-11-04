@@ -2,21 +2,20 @@
 
 ## Project Description
 
-This project contains my Week 1 JavaScript exercises. It demonstrates my understanding of basic JavaScript programming concepts, including:
+This project demonstrates how to use MongoDB and Mongoose with Node.js to manage a collection of person records.
 
-- Printing output to the console.
-- Declaring and using variables.
-- Receiving user input.
-- Working with numbers and strings.
-- Using conditional statements (`if`, `else if`, and `else`).
-- Performing basic arithmetic operations.
+The exercise extends an existing Person schema by adding a new field called city. It also demonstrates how to insert documents, retrieve records, filter results, sort data, count documents, update salaries, and delete records using Mongoose.
+
+The project uses the MongoDB collection personCollection to store information about people, including their names, ages, genders, salaries, and cities.
+
 
 ## Technologies Used
 
 - JavaScript
 - Node.js
 - npm (Node Package Manager)
-- prompt-sync (for receiving user input)
+- mongodb
+- mongoose
 
 ## Installation and Setup
 
@@ -41,14 +40,11 @@ git clone https://github.com/olaolaide/CN5006.git
 
 Navigate into the folder:
 
-    cd CN5006/week1
+    cd CN5006/week4
 
 ### Step 3: Install Dependencies
-
-Install prompt-sync to allow the program to receive user input:
-
 ```bash
-      npm install prompt-sync
+      npm install
 ```
 
 ### Step 4: Run Project
@@ -60,17 +56,14 @@ node index.js
 ### Project Structure
 
 ```
-week1/
+week4/
 │
 ├── node_modules/
 ├── package.json
 ├── package-lock.json
-├── app.js
+├── index.js
 └── README.md
 ```
 
 ### Author
-
 Abimbola Olaide
-
-Week 1 JavaScript Portfolio Exercise.
