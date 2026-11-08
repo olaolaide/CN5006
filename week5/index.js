@@ -212,7 +212,7 @@ app.post("/insertMany", async (req, res) => {
 });
 
 // Insert many
-app.post("/updateMany", async (req, res) => {
+app.put("/updateMany", async (req, res) => {
   try {
     console.log("Inserting many people in my database");
     const result = await updateManyPersons();
