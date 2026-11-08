@@ -106,59 +106,17 @@ async function updateManyPersons() {
 async function insertManyWithCity() {
   const peopleWithCity = [
     { name: "JohnMKL", age: 35, gender: "Male", salary: 4200, city: "London" },
-    {
-      name: "SarahNQ",
-      age: 29,
-      gender: "Female",
-      salary: 3800,
-      city: "London",
-    },
+    { name: "SarahNQ", age: 29, gender: "Female", salary: 3800, city: "London",},
     { name: "DavidPR", age: 45, gender: "Male", salary: 5600, city: "London" },
     { name: "EmmaWX", age: 32, gender: "Female", salary: 4900, city: "London" },
-    {
-      name: "OliverTY",
-      age: 41,
-      gender: "Male",
-      salary: 6100,
-      city: "Manchester",
-    },
-    {
-      name: "SophiaKL",
-      age: 26,
-      gender: "Female",
-      salary: 3200,
-      city: "Manchester",
-    },
-    {
-      name: "JamesVD",
-      age: 38,
-      gender: "Male",
-      salary: 4500,
-      city: "Birmingham",
-    },
-    {
-      name: "AvaBC",
-      age: 31,
-      gender: "Female",
-      salary: 5200,
-      city: "Liverpool",
-    },
+    { name: "OliverTY", age: 41, gender: "Male", salary: 6100, city: "Manchester", },
+    { name: "SophiaKL", age: 26, gender: "Female", salary: 3200,  city: "Manchester", },
+    { name: "JamesVD", age: 38, gender: "Male", salary: 4500,  city: "Birmingham", },
+    { name: "AvaBC",  age: 31, gender: "Female", salary: 5200,  city: "Liverpool", },
     { name: "NoahFG", age: 50, gender: "Male", salary: 7200, city: "Bristol" },
     { name: "MiaRS", age: 24, gender: "Female", salary: 2900, city: "Leeds" },
-    {
-      name: "LucasHJ",
-      age: 36,
-      gender: "Male",
-      salary: 4800,
-      city: "Birmingham",
-    },
-    {
-      name: "IslaZE",
-      age: 43,
-      gender: "Female",
-      salary: 6500,
-      city: "Liverpool",
-    },
+    { name: "LucasHJ",  age: 36,  gender: "Male", salary: 4800,  city: "Birmingham",},
+    { name: "IslaZE", age: 43, gender: "Female", salary: 6500, city: "Liverpool",},
   ];
 
   const result = await Person.insertMany(peopleWithCity);
