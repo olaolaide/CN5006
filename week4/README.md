@@ -1,4 +1,4 @@
-# Week 1 JavaScript Portfolio
+# Week 4 JavaScript Portfolio
 
 ## Project Description
 
