@@ -4,7 +4,7 @@ import "./index.css";
 import Welcome from "./Myapp.jsx";
 import Product from "./Product.jsx";
 import DiscountCalculator from "./DiscountCalculator.jsx";
-import App from "./App.jsx";
+//import App from "./App.jsx";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
