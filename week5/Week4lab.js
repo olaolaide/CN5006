@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 
 //const MONGO_URI = 'mongodb://localhost:27017/Week8';
 const MONGO_URI =
-  "mongodb+srv://youruser:yourpassword@cluster0.tqdie1c.mongodb.net/Employee";
+  'mongodb+srv://Abimbola2003:Abimbola2003@kalixy.u0jcskt.mongodb.net/';
 
 const PersonSchema = new mongoose.Schema({
   name: {
